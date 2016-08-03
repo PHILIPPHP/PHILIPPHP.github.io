@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Личный сайт студента GeekBrains</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+		
+		function Play()
+		{	
+			if (confirm('Добро пожаловать в компьютерную рулетку. Хотите начать игру?')) {
+	alert('Правила: '+ 'Нельзя вводить одновременно одиннаковые числа.');
+	var player1 = prompt("Введите имя первого игрока: ");
+	alert("Первый игрок: " + player1);
+	var player2 = prompt("Введите имя второго игрока: ");
+	alert("Второй игрок: " + player2);
+	var answer = parseInt(Math.random()* 100);
+	
+	if(confirm('Хотите ввести кол-во раундов? Если вы откажетесь, будет включена бесконечная игра.')) {
+		var round = parseInt(prompt("Количество раундов?"));
+		for(var count = 1; count <= round; count++){
+			var numberPlayer1 = parseInt(prompt("Пожалуйста " +player1+ ", введите ваш вариант ответа: "));
+			var numberPlayer2 = parseInt(prompt("Пожалуйста " +player2+ ", введите ваш вариант ответа: "));
+			if(numberPlayer1 == answer) {
+				alert("Молодец! "+player1+", вы угадали. Загаданное число: " +answer+  ".  Спасибо за игру. The End!");
+				break;
+			} else if (numberPlayer2 == answer) {
+				alert("Молодец! "+player2+", вы угадали. Загаданное число: " +answer+  ". Спасибо за игру. The End!");
+				break;
+			} if(numberPlayer1 < answer) {
+				alert(player1+", ваше число слишком маленькое.");
+			} else if(numberPlayer1 > answer) {
+				alert(player1+", ваше число слишком большое.");
+			} if(numberPlayer2 > answer) {
+				alert(player2+", ваше число слишком большое.");
+			} else if(numberPlayer2 < answer) {
+				alert(player2+", ваше число слишком маленькое.");
+			}
+		}
+	    if((numberPlayer1 != answer) && (numberPlayer2 != answer)) { 
+		alert("Победили машины, " +player1+ ' и ' +player2+ ', проиграли. The End!');
+		}
+	} else {
+		alert("Режим: До победного! :P");
+		while(true) {
+			var numberPlayer1 = parseInt(prompt("Пожалуйста " +player1+ ", введите ваш вариант ответа: "));
+			var numberPlayer2 = parseInt(prompt("Пожалуйста " +player2+ ", введите ваш вариант ответа: "));
+			if(numberPlayer1 == answer) {
+				alert("Молодец! "+player1+", вы угадали. Загаданное число: " +answer+  ".  Спасибо за игру. The End!");
+				break;
+			} else if (numberPlayer2 == answer) {
+				alert("Молодец! "+player2+", вы угадали. Загаданное число: " +answer+  ". Спасибо за игру. The End!");
+				break;
+			} if(numberPlayer1 < answer) {
+				alert(player1+", ваше число слишком маленькое.");
+			} else if(numberPlayer1 > answer) {
+				alert(player1+", ваше число слишком большое.");
+			} if(numberPlayer2 > answer) {
+				alert(player2+", ваше число слишком большое.");
+			} else if(numberPlayer2 < answer) {
+				alert(player2+", ваше число слишком маленькое.");
+			}
+		}	
+	}
+	
+			} else {
+	alert('Спасибо за вниманием. Выходим из игры...');
+		}
+
+	}
+
+	</script>
+</head>
+<body>
+	<div id="header">
+		<a href="index.html">Главная</a><span>/</span>
+		<a href="puzzles.html">Загадки</a><span>/</span>
+		<a href="guess.html">Угадайка</a><span>/</span>
+		<a href="guess-2.html">Угадайка мультиплеер</a><span>/</span>
+	</div>
+<div id="content">
+	<h1>Личный сайт студента GeekBrains</h1>
+    <div id="center">	
+		<h3>Угадайка мультиплеер</h3>			
+	    <div id="box">
+	    	<p>Играет 2 игра. У вас будет неограниченное количество попыток, чтобы угадать загадку.</p>
+            <br><br/>
+            <a href="#" onclick="Play();">Начать игру</a>
+	    </div>
+</div>
+
+<div id="footer">
+Copyright © 2016 <a href="https://geekbrains.ru/" target="_blank">GeekBrains</a>
+</div>
+</body>
+</html>
